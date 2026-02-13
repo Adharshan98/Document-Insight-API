@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Insight AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <header>
+                <h1>Document Insight AI</h1>
+                <p>Upload a PDF and ask questions to get AI-powered insights.</p>
+            </header>
+            
+            <form id="qa-form">
+                <div class="form-group">
+                    <label for="file-input">Select Document (PDF)</label>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="file-input" name="file" accept=".pdf" required>
+                        <div class="file-upload-interface">
+                            <span class="upload-icon">📄</span>
+                            <span id="file-name">Click to upload or drag and drop</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="question-input">Your Question</label>
+                    <input type="text" id="question-input" name="question" placeholder="e.g., What is the main conclusion?" required autocomplete="off">
+                </div>
+
+                <button type="submit" id="submit-btn">
+                    <span class="btn-text">Get Answer</span>
+                    <div class="spinner hidden"></div>
+                </button>
+            </form>
+
+            <div id="error-message" class="message error hidden"></div>
+
+            <div id="result-container" class="result-box hidden">
+                <div class="result-header">
+                    <h2>Answer</h2>
+                    <span class="badge">Chunks used: <span id="chunks-used">0</span></span>
+                </div>
+                <div class="result-content">
+                    <p id="answer-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
